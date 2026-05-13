@@ -17,7 +17,6 @@
       "output_mapping": {
         "reviewerform.reference_number": "fcau.reference_number",
         "reviewerform.review_outcome": "fcau.application_review_outcome",
-        "reviewerform.rejection_reason": "fcau.rejection_reason",
         "userform": "fcau.userform"
       }
     },
@@ -86,8 +85,7 @@
         "fcau.userform": "userform"
       },
       "output_mapping": {
-        "reviewerform.lab_test_required": "fcau.lab_test_required",
-        "reviewerform.assessment_outcome": "fcau.assessment_outcome"
+        "reviewerform.lab_test_required": "fcau.lab_test_required"
       }
     },
     {

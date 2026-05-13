@@ -1,5 +1,6 @@
 {
   "id": "fcau-apply-health-cert--reviewer-form",
+  "title": "Application Assessment Review",
   "schema": {
     "type": "object",
     "properties": {

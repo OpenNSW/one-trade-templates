@@ -1,5 +1,6 @@
 {
   "id": "fcau-sample-assessment--reviewer-form",
+  "title": "Manual Sample Assessment",
   "schema": {
     "type": "object",
     "properties": {

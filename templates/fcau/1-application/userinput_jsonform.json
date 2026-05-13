@@ -1,5 +1,6 @@
 {
   "id": "fcau-apply-health-cert--user-form",
+  "title": "FCAU Health Certificate Application",
   "schema": {
     "type": "object",
     "properties": {
@@ -71,8 +72,8 @@
       },
       "analysis_certificates": {
         "type": "string",
-        "title": "Raw materials and product analysis certificates (Attach)",
-        "example": "COA-2026-00481.pdf, RAW-SPEC-3392.pdf"
+        "format": "file",
+        "title": "Raw Materials & Product Analysis Certificates"
       },
       "other_declarations": {
         "type": "string",
