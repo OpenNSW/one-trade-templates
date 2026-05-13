@@ -1,0 +1,8 @@
+{
+  "template_id": "fcau-sample-decision--officer-review",
+  "task_type": "APPLICATION",
+  "plugin_name": "generic_officer_input",
+  "plugin_properties": {
+    "officer_jsonforms_id": "fcau-sample-decision--reviewer-form"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "template_id": "fcau-pay-app-fee--payment",
+  "task_type": "PAYMENT",
+  "plugin_name": "generic_payment",
+  "plugin_properties": {
+    "payment_service_url": "http://fcau-payment/api/pay-app-fee"
+  }
+}
