@@ -1,5 +1,6 @@
 {
   "id": "fcau-sample-decision--reviewer-form",
+  "title": "Sample Requirement Decision",
   "schema": {
     "type": "object",
     "properties": {
