@@ -1,0 +1,52 @@
+{
+  "id": "subworkflow_boat_note_processing",
+  "name": "Process Boat Note",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "start",
+      "type": "START"
+    },
+    {
+      "id": "submission",
+      "type": "TASK",
+      "task_template_id": "customs-boat-note--user-input",
+      "output_mapping": {
+        "userform": "userform"
+      }
+    },
+    {
+      "id": "reviewer_approval",
+      "type": "TASK",
+      "task_template_id": "customs-boat-note--review",
+      "input_mapping": {
+        "userform": "userform",
+        "customs.cusdec": "cusdec"
+      },
+      "output_mapping": {
+        "reviewerform": "reviewerform"
+      }
+    },
+    {
+      "id": "end",
+      "type": "END"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_start",
+      "source_id": "start",
+      "target_id": "submission"
+    },
+    {
+      "id": "e_submission_to_review",
+      "source_id": "submission",
+      "target_id": "reviewer_approval"
+    },
+    {
+      "id": "e_review_to_end",
+      "source_id": "reviewer_approval",
+      "target_id": "end"
+    }
+  ]
+}

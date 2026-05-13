@@ -1,0 +1,67 @@
+{
+  "id": "customs-apply-cusdec--verify-form",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string",
+        "title": "ASYCUDA Validation Status",
+        "enum": [
+          "success",
+          "fail"
+        ],
+        "default": "success",
+        "example": "success"
+      },
+      "error_message": {
+        "type": "string",
+        "title": "Validation Error Message (if failed)",
+        "example": "Incorrect Harmonized System (HS) code format for selected commodity class."
+      },
+      "duty_amount": {
+        "type": "number",
+        "title": "Calculated Customs Duty (USD)",
+        "default": 1450,
+        "example": 1450
+      }
+    },
+    "required": [
+      "status"
+    ]
+  },
+  "uischema": {
+    "type": "VerticalLayout",
+    "elements": [
+      {
+        "type": "Control",
+        "scope": "#/properties/status"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/error_message",
+        "rule": {
+          "effect": "SHOW",
+          "condition": {
+            "scope": "#/properties/status",
+            "schema": {
+              "const": "fail"
+            }
+          }
+        }
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/duty_amount",
+        "rule": {
+          "effect": "SHOW",
+          "condition": {
+            "scope": "#/properties/status",
+            "schema": {
+              "const": "success"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

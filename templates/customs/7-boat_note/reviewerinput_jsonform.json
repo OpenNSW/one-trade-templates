@@ -1,0 +1,67 @@
+{
+  "id": "customs-boat-note--review-form",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "review_outcome": {
+        "type": "string",
+        "title": "Boat Note Approval Status",
+        "enum": [
+          "approve",
+          "reject"
+        ],
+        "default": "approve",
+        "example": "approve"
+      },
+      "customs_wharf_id": {
+        "type": "string",
+        "title": "Assigned Customs Wharf Terminal",
+        "default": "Wharf Gate 4",
+        "example": "Wharf Gate 4"
+      },
+      "rejection_reason": {
+        "type": "string",
+        "title": "Reason for Rejection",
+        "example": "Container seals do not match declared CusDec manifest numbers."
+      }
+    },
+    "required": [
+      "review_outcome"
+    ]
+  },
+  "uischema": {
+    "type": "VerticalLayout",
+    "elements": [
+      {
+        "type": "Control",
+        "scope": "#/properties/review_outcome"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/customs_wharf_id",
+        "rule": {
+          "effect": "SHOW",
+          "condition": {
+            "scope": "#/properties/review_outcome",
+            "schema": {
+              "const": "approve"
+            }
+          }
+        }
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/rejection_reason",
+        "rule": {
+          "effect": "SHOW",
+          "condition": {
+            "scope": "#/properties/review_outcome",
+            "schema": {
+              "const": "reject"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "fcl_cdn_submission_and_ack",
+  "name": "Process FCL Cargo Dispatch Notes",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "start",
+      "type": "START"
+    },
+    {
+      "id": "submission",
+      "type": "TASK",
+      "task_template_id": "customs-fcl-cdn--user-input",
+      "output_mapping": {
+        "userform": "userform"
+      }
+    },
+    {
+      "id": "wait_ack",
+      "type": "TASK",
+      "task_template_id": "customs-fcl-cdn--wait-ack",
+      "input_mapping": {
+        "userform": "userform",
+        "customs.cusdec": "cusdec"
+      }
+    },
+    {
+      "id": "end",
+      "type": "END"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_start",
+      "source_id": "start",
+      "target_id": "submission"
+    },
+    {
+      "id": "e_submission_to_wait",
+      "source_id": "submission",
+      "target_id": "wait_ack"
+    },
+    {
+      "id": "e_wait_to_end",
+      "source_id": "wait_ack",
+      "target_id": "end"
+    }
+  ]
+}

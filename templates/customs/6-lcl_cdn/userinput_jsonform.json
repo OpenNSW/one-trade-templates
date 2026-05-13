@@ -1,0 +1,70 @@
+{
+  "id": "customs-lcl-cdn--user-form",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "consignment_weight": {
+        "type": "number",
+        "title": "Gross Package Weight (kg)",
+        "default": 450,
+        "example": 450
+      },
+      "package_count": {
+        "type": "number",
+        "title": "Number of Packages",
+        "default": 18,
+        "example": 18
+      },
+      "package_type": {
+        "type": "string",
+        "title": "Package Unit Type",
+        "enum": [
+          "Cartons",
+          "Pallets",
+          "Crates",
+          "Bags"
+        ],
+        "default": "Cartons",
+        "example": "Cartons"
+      },
+      "cfs_operator_code": {
+        "type": "string",
+        "title": "Container Freight Station (CFS) Operator",
+        "enum": [
+          "CFS-A",
+          "CFS-B",
+          "CFS-C"
+        ],
+        "default": "CFS-A",
+        "example": "CFS-A"
+      }
+    },
+    "required": [
+      "consignment_weight",
+      "package_count",
+      "package_type",
+      "cfs_operator_code"
+    ]
+  },
+  "uischema": {
+    "type": "VerticalLayout",
+    "elements": [
+      {
+        "type": "Control",
+        "scope": "#/properties/consignment_weight"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/package_count"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/package_type"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/cfs_operator_code"
+      }
+    ]
+  }
+}

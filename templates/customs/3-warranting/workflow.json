@@ -1,0 +1,38 @@
+{
+  "id": "wait_for_warranting_completed",
+  "name": "Warranting Verification Process",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "start",
+      "type": "START"
+    },
+    {
+      "id": "main_warranting_task",
+      "type": "TASK",
+      "task_template_id": "wait_for_warranting_completed",
+      "input_mapping": {
+        "customs.cusdec": "cusdec"
+      },
+      "output_mapping": {
+        "examinationRequired": "examinationRequired"
+      }
+    },
+    {
+      "id": "end",
+      "type": "END"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source_id": "start",
+      "target_id": "main_warranting_task"
+    },
+    {
+      "id": "e2",
+      "source_id": "main_warranting_task",
+      "target_id": "end"
+    }
+  ]
+}

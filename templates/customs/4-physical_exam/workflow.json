@@ -1,0 +1,35 @@
+{
+  "id": "manual_physical_examination",
+  "name": "Physical Examination Process",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "start",
+      "type": "START"
+    },
+    {
+      "id": "main_physical_exam_task",
+      "type": "TASK",
+      "task_template_id": "manual_physical_examination",
+      "input_mapping": {
+        "customs.cusdec": "cusdec"
+      }
+    },
+    {
+      "id": "end",
+      "type": "END"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source_id": "start",
+      "target_id": "main_physical_exam_task"
+    },
+    {
+      "id": "e2",
+      "source_id": "main_physical_exam_task",
+      "target_id": "end"
+    }
+  ]
+}
