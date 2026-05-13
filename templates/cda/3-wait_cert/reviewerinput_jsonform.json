@@ -1,0 +1,39 @@
+{
+  "id": "cda-wait-cert--reviewer-form",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "salmonella_cert_uri": {
+        "type": "string",
+        "title": "Salmonella-Free Certificate Digital URI",
+        "default": "https://cda.gov.lk/certs/salmonella-cda-2026-92815.pdf",
+        "example": "https://cda.gov.lk/certs/salmonella-cda-2026-92815.pdf"
+      },
+      "quality_cert_uri": {
+        "type": "string",
+        "title": "Physical Quality Certificate Digital URI",
+        "default": "https://cda.gov.lk/certs/quality-cda-2026-92815.pdf",
+        "example": "https://cda.gov.lk/certs/quality-cda-2026-92815.pdf"
+      }
+    },
+    "required": [
+      "salmonella_cert_uri",
+      "quality_cert_uri"
+    ]
+  },
+  "uischema": {
+    "type": "VerticalLayout",
+    "elements": [
+      {
+        "type": "Control",
+        "scope": "#/properties/salmonella_cert_uri",
+        "label": "Salmonella-Free Certificate Digital URI"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/quality_cert_uri",
+        "label": "Physical Quality Certificate Digital URI"
+      }
+    ]
+  }
+}

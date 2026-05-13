@@ -1,0 +1,55 @@
+{
+  "id": "SIMPLE_FORM",
+  "name": "Submit Application",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "start",
+      "type": "START"
+    },
+    {
+      "id": "applicant_submission",
+      "type": "TASK",
+      "task_template_id": "cda-apply-cert--user-input",
+      "output_mapping": {
+        "userform": "userform",
+        "userform.requested_salmonella_cert": "requested_salmonella_cert",
+        "userform.requested_quality_cert": "requested_quality_cert"
+      }
+    },
+    {
+      "id": "reviewer_review",
+      "type": "TASK",
+      "task_template_id": "cda-apply-cert--reviewer-review",
+      "input_mapping": {
+        "userform": "userform"
+      },
+      "output_mapping": {
+        "reviewerform": "reviewerform",
+        "reviewerform.application_id": "application_id",
+        "reviewerform.payment_amount": "payment_amount"
+      }
+    },
+    {
+      "id": "end",
+      "type": "END"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_start",
+      "source_id": "start",
+      "target_id": "applicant_submission"
+    },
+    {
+      "id": "e_submission_to_review",
+      "source_id": "applicant_submission",
+      "target_id": "reviewer_review"
+    },
+    {
+      "id": "e_review_to_end",
+      "source_id": "reviewer_review",
+      "target_id": "end"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "template_id": "cda-apply-cert--reviewer-review",
+  "task_type": "APPLICATION",
+  "plugin_name": "generic_external_review",
+  "plugin_properties": {
+    "user_jsonforms_id": "cda-apply-cert--user-form",
+    "reviewer_jsonforms_id": "cda-apply-cert--reviewer-form",
+    "external_url": "http://localhost:8081/api/external-tasks?type=cda-application"
+  }
+}

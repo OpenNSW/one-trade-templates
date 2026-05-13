@@ -1,0 +1,81 @@
+{
+  "id": "nsw_cert_issuance_wf",
+  "name": "Issuance of Salmonella Free and Physical Quality Certificates",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "node_start",
+      "name": "Start",
+      "type": "START"
+    },
+    {
+      "id": "node_submit_app",
+      "name": "[CDA 1.0] Submit Application",
+      "type": "TASK",
+      "task_template_id": "SIMPLE_FORM",
+      "output_mapping": {
+        "application_id": "cda.application_id",
+        "payment_amount": "cda.payment_amount",
+        "requested_salmonella_cert": "cda.requested_salmonella_cert",
+        "requested_quality_cert": "cda.requested_quality_cert",
+        "userform": "cda.application_details"
+      }
+    },
+    {
+      "id": "node_make_payment",
+      "name": "[CDA 2.0] Make Payment",
+      "type": "TASK",
+      "task_template_id": "PAYMENT",
+      "input_mapping": {
+        "cda.application_id": "application_id",
+        "cda.payment_amount": "payment_amount"
+      },
+      "output_mapping": {
+        "payment_status": "cda.app_fee_payment_status"
+      }
+    },
+    {
+      "id": "node_wait_cert",
+      "name": "[CDA 3.0] Wait on Certificate Issuing",
+      "type": "TASK",
+      "task_template_id": "WAIT_FOR_EVENT",
+      "input_mapping": {
+        "cda.application_id": "application_id",
+        "cda.requested_salmonella_cert": "requested_salmonella_cert",
+        "cda.requested_quality_cert": "requested_quality_cert",
+        "cda.application_details": "application_details"
+      },
+      "output_mapping": {
+        "salmonella_cert_uri": "cda.salmonella_cert_uri",
+        "quality_cert_uri": "cda.quality_cert_uri"
+      }
+    },
+    {
+      "id": "node_end",
+      "name": "End",
+      "type": "END"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_1",
+      "source_id": "node_start",
+      "target_id": "node_submit_app"
+    },
+    {
+      "id": "edge_2",
+      "source_id": "node_submit_app",
+      "target_id": "node_make_payment"
+    },
+    {
+      "id": "edge_3",
+      "source_id": "node_make_payment",
+      "target_id": "node_wait_cert"
+    },
+    {
+      "id": "edge_4",
+      "source_id": "node_wait_cert",
+      "target_id": "node_end"
+    }
+  ]
+}

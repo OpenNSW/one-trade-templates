@@ -1,0 +1,92 @@
+{
+  "id": "cda-apply-cert--reviewer-form",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "review_outcome": {
+        "type": "string",
+        "title": "Review Outcome Decision",
+        "enum": [
+          "approve",
+          "reject",
+          "needs_more_info"
+        ],
+        "default": "approve"
+      },
+      "application_id": {
+        "type": "string",
+        "title": "Assigned CDA Application Reference ID",
+        "default": "CDA-APP-2026-92815"
+      },
+      "payment_amount": {
+        "type": "number",
+        "title": "CDA Processing & Audit Fee Amount (USD)",
+        "default": 350
+      },
+      "comments": {
+        "type": "string",
+        "title": "Officer Review Comments"
+      },
+      "requested_salmonella_cert": {
+        "type": "boolean",
+        "title": "Acknowledge Salmonella Cert Request",
+        "default": true
+      },
+      "requested_quality_cert": {
+        "type": "boolean",
+        "title": "Acknowledge Quality Cert Request",
+        "default": true
+      }
+    },
+    "required": [
+      "review_outcome"
+    ]
+  },
+  "uischema": {
+    "type": "VerticalLayout",
+    "elements": [
+      {
+        "type": "Control",
+        "scope": "#/properties/review_outcome"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/application_id",
+        "rule": {
+          "effect": "SHOW",
+          "condition": {
+            "scope": "#/properties/review_outcome",
+            "schema": {
+              "const": "approve"
+            }
+          }
+        }
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/payment_amount",
+        "rule": {
+          "effect": "SHOW",
+          "condition": {
+            "scope": "#/properties/review_outcome",
+            "schema": {
+              "const": "approve"
+            }
+          }
+        }
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/requested_salmonella_cert"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/requested_quality_cert"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/comments"
+      }
+    ]
+  }
+}
