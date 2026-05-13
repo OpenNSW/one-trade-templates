@@ -1,0 +1,9 @@
+{
+  "template_id": "wait_for_payment_confirmed",
+  "task_type": "PAYMENT",
+  "plugin_name": "generic_payment",
+  "plugin_properties": {
+    "amount": 1450,
+    "payment_service_url": "http://localhost:8080/api/payment"
+  }
+}

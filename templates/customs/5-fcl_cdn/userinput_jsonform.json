@@ -1,0 +1,64 @@
+{
+  "id": "customs-fcl-cdn--user-form",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "container_number": {
+        "type": "string",
+        "title": "FCL Container Number",
+        "default": "MSCU4819204",
+        "example": "MSCU4819204"
+      },
+      "seal_number": {
+        "type": "string",
+        "title": "Customs Bullet Seal Number",
+        "default": "SL-CUS-98124",
+        "example": "SL-CUS-98124"
+      },
+      "truck_license_plate": {
+        "type": "string",
+        "title": "Haulier Truck Plate Number",
+        "default": "WP-LY-4819",
+        "example": "WP-LY-4819"
+      },
+      "terminal_gate_code": {
+        "type": "string",
+        "title": "Destination Terminal Code",
+        "enum": [
+          "JCT",
+          "SAGT",
+          "CICT"
+        ],
+        "default": "JCT",
+        "example": "JCT"
+      }
+    },
+    "required": [
+      "container_number",
+      "seal_number",
+      "truck_license_plate",
+      "terminal_gate_code"
+    ]
+  },
+  "uischema": {
+    "type": "VerticalLayout",
+    "elements": [
+      {
+        "type": "Control",
+        "scope": "#/properties/container_number"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/seal_number"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/truck_license_plate"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/terminal_gate_code"
+      }
+    ]
+  }
+}

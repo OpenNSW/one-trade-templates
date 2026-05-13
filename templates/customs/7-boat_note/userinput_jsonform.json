@@ -1,0 +1,59 @@
+{
+  "id": "customs-boat-note--user-form",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "vessel_name": {
+        "type": "string",
+        "title": "Ocean Vessel Name",
+        "default": "Ever Given",
+        "example": "Ever Given"
+      },
+      "voyage_number": {
+        "type": "string",
+        "title": "Voyage Identifier",
+        "default": "EG-2026-E04",
+        "example": "EG-2026-E04"
+      },
+      "port_of_discharge": {
+        "type": "string",
+        "title": "Port of Discharge (Destination)",
+        "default": "Rotterdam (NLRTM)",
+        "example": "Rotterdam (NLRTM)"
+      },
+      "package_total_verified": {
+        "type": "boolean",
+        "title": "Confirm all packages verified & tallied for loading",
+        "default": true,
+        "example": true
+      }
+    },
+    "required": [
+      "vessel_name",
+      "voyage_number",
+      "port_of_discharge",
+      "package_total_verified"
+    ]
+  },
+  "uischema": {
+    "type": "VerticalLayout",
+    "elements": [
+      {
+        "type": "Control",
+        "scope": "#/properties/vessel_name"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/voyage_number"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/port_of_discharge"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/package_total_verified"
+      }
+    ]
+  }
+}

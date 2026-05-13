@@ -1,0 +1,85 @@
+{
+  "id": "subworkflow_cusdec_application",
+  "name": "CusDec Application Process",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "start",
+      "type": "START"
+    },
+    {
+      "id": "applicant_submission",
+      "type": "TASK",
+      "task_template_id": "customs-apply-cusdec--user-input",
+      "output_mapping": {
+        "userform": "userform",
+        "userform.shipmentType": "shipment_type"
+      }
+    },
+    {
+      "id": "verify_cusdec",
+      "type": "TASK",
+      "task_template_id": "customs-apply-cusdec--verify",
+      "input_mapping": {
+        "userform": "userform"
+      },
+      "output_mapping": {
+        "reviewerform": "verification_result"
+      }
+    },
+    {
+      "id": "verify_gateway",
+      "type": "GATEWAY",
+      "gateway_type": "EXCLUSIVE_SPLIT"
+    },
+    {
+      "id": "submit_cusdec",
+      "type": "TASK",
+      "task_template_id": "customs-apply-cusdec--submit",
+      "input_mapping": {
+        "userform": "userform"
+      },
+      "output_mapping": {
+        "reviewerform": "submission_result"
+      }
+    },
+    {
+      "id": "end",
+      "type": "END"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_start",
+      "source_id": "start",
+      "target_id": "applicant_submission"
+    },
+    {
+      "id": "e_submit_to_verify",
+      "source_id": "applicant_submission",
+      "target_id": "verify_cusdec"
+    },
+    {
+      "id": "e_verify_to_gateway",
+      "source_id": "verify_cusdec",
+      "target_id": "verify_gateway"
+    },
+    {
+      "id": "e_verify_fail",
+      "source_id": "verify_gateway",
+      "target_id": "applicant_submission",
+      "condition": "verification_result.status == 'fail'"
+    },
+    {
+      "id": "e_verify_success",
+      "source_id": "verify_gateway",
+      "target_id": "submit_cusdec",
+      "condition": "verification_result.status == 'success'"
+    },
+    {
+      "id": "e_submit_to_end",
+      "source_id": "submit_cusdec",
+      "target_id": "end"
+    }
+  ]
+}

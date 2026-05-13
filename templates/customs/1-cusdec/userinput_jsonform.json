@@ -1,0 +1,673 @@
+{
+  "id": "customs-apply-cusdec--user-form",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "nswId": {
+        "type": "string",
+        "title": "[NSW] Transaction ID (Idempotency UUID)",
+        "default": "c9b1390e-436d-4767-8857-e9a68c07e99b",
+        "example": "c9b1390e-436d-4767-8857-e9a68c07e99b"
+      },
+      "shipmentType": {
+        "type": "string",
+        "title": "[NSW] Shipment Type",
+        "enum": [
+          "FCL",
+          "LCL"
+        ],
+        "default": "FCL",
+        "example": "FCL"
+      },
+      "containerCount": {
+        "type": "integer",
+        "title": "[NSW] FCL Container Count",
+        "default": 1,
+        "example": 1
+      },
+      "identification_officeCode": {
+        "type": "string",
+        "title": "[Box 29] Customs Office Code",
+        "default": "CBEX1",
+        "example": "CBEX1"
+      },
+      "identification_declarationType": {
+        "type": "string",
+        "title": "[Box 1] Declaration Type",
+        "default": "EX",
+        "example": "EX"
+      },
+      "identification_generalProcedureCode": {
+        "type": "string",
+        "title": "[Box 37] General Procedure Code",
+        "default": "1",
+        "example": "1"
+      },
+      "identification_transitDocumentType": {
+        "type": "string",
+        "title": "[Box 1] Transit Document Type Code (Optional)",
+        "default": "01",
+        "example": "01"
+      },
+      "traders_exporter_code": {
+        "type": "string",
+        "title": "[Box 2] Exporter TIN / Code",
+        "default": "1390512627000",
+        "example": "1390512627000"
+      },
+      "traders_consignee_code": {
+        "type": "string",
+        "title": "[Box 8] Consignee Code (Optional)",
+        "default": "98045124000",
+        "example": "98045124000"
+      },
+      "traders_consignee_name": {
+        "type": "string",
+        "title": "[Box 8] Consignee Full Name & Address",
+        "default": "Global Beverage Imports Ltd, No. 12 Regent St, London, SW1Y 4PH, UK",
+        "example": "Global Beverage Imports Ltd, No. 12 Regent St, London, SW1Y 4PH, UK"
+      },
+      "traders_declarant_code": {
+        "type": "string",
+        "title": "[Box 14] Declarant / CHA Code",
+        "default": "1147415587000",
+        "example": "1147415587000"
+      },
+      "traders_declarant_referenceNo": {
+        "type": "string",
+        "title": "[Box 14] Declarant Internal Reference Number (Optional)",
+        "default": "#32",
+        "example": "#32"
+      },
+      "generalInfo_countryOfFirstDestination": {
+        "type": "string",
+        "title": "[Box 17] Country of First Destination (ISO)",
+        "default": "DE",
+        "example": "DE"
+      },
+      "generalInfo_exportCountryCode": {
+        "type": "string",
+        "title": "[Box 17] Export Country Code (Always LK)",
+        "default": "LK",
+        "example": "LK"
+      },
+      "generalInfo_destinationCountryCode": {
+        "type": "string",
+        "title": "[Box 17] Final Destination Country Code (ISO)",
+        "default": "DE",
+        "example": "DE"
+      },
+      "generalInfo_additionalInfo": {
+        "type": "string",
+        "title": "[Box 17] Additional Information Code (Optional)",
+        "default": "",
+        "example": ""
+      },
+      "generalInfo_commentsText": {
+        "type": "string",
+        "title": "[Box 17] Free Text Comments",
+        "default": "High quality Ceylon black tea shipment for Europe.",
+        "example": "High quality Ceylon black tea shipment for Europe."
+      },
+      "transport_vesselName": {
+        "type": "string",
+        "title": "[Box 18] Ocean Vessel Name",
+        "default": "EVER GIVEN",
+        "example": "EVER GIVEN"
+      },
+      "transport_voyageNo": {
+        "type": "string",
+        "title": "[Box 18] Voyage Number",
+        "default": "EG-2026-E04",
+        "example": "EG-2026-E04"
+      },
+      "transport_modeOfTransport": {
+        "type": "string",
+        "title": "[Box 25] Transport Mode Code (1=Sea, 3=Road, 4=Air)",
+        "default": "1",
+        "example": "1"
+      },
+      "transport_containerized": {
+        "type": "boolean",
+        "title": "[Box 19] Containerized Cargo Shipment?",
+        "default": true,
+        "example": true
+      },
+      "transport_deliveryTermsCode": {
+        "type": "string",
+        "title": "[Box 20] Incoterms Delivery Code",
+        "default": "FOB",
+        "example": "FOB"
+      },
+      "transport_deliveryTermsPlace": {
+        "type": "string",
+        "title": "[Box 20] Delivery Place (Optional)",
+        "default": "Colombo Port",
+        "example": "Colombo Port"
+      },
+      "transport_borderOfficeCode": {
+        "type": "string",
+        "title": "[Box 29] Border Customs Office Code",
+        "default": "CBEX1",
+        "example": "CBEX1"
+      },
+      "transport_placeOfLoadingCode": {
+        "type": "string",
+        "title": "[Box 29] UN/LOCODE Place of Loading",
+        "default": "LKCMB",
+        "example": "LKCMB"
+      },
+      "transport_placeOfLoadingName": {
+        "type": "string",
+        "title": "[Box 29] Place of Loading Name (Optional)",
+        "default": "COLOMBO PORT",
+        "example": "COLOMBO PORT"
+      },
+      "transport_locationOfGoods": {
+        "type": "string",
+        "title": "[Box 30] Location of Goods",
+        "default": "SLPA",
+        "example": "SLPA"
+      },
+      "financial_bankCode": {
+        "type": "string",
+        "title": "[Box 47] Settling Bank Code",
+        "default": "7056",
+        "example": "7056"
+      },
+      "financial_bankName": {
+        "type": "string",
+        "title": "[Box 47] Bank Name (Optional)",
+        "default": "Commercial Bank of Ceylon",
+        "example": "Commercial Bank of Ceylon"
+      },
+      "financial_bankBranch": {
+        "type": "string",
+        "title": "[Box 47] Bank Branch Code",
+        "default": "001",
+        "example": "001"
+      },
+      "financial_bankReference": {
+        "type": "string",
+        "title": "[Box 47] Bank reference number",
+        "default": "84004328",
+        "example": "84004328"
+      },
+      "financial_paymentTermsCode": {
+        "type": "string",
+        "title": "[Box 47] Payment Terms Code",
+        "default": "31",
+        "example": "31"
+      },
+      "financial_modeOfPayment": {
+        "type": "string",
+        "title": "[Box 47] Mode of payment",
+        "default": "CASH",
+        "example": "CASH"
+      },
+      "valuation_invoiceAmountForeign": {
+        "type": "number",
+        "title": "[Box 46] Invoice Amount (Foreign Currency)",
+        "default": 31880.1,
+        "example": 31880.1
+      },
+      "valuation_invoiceCurrencyCode": {
+        "type": "string",
+        "title": "[Box 46] Invoice Currency ISO Code",
+        "default": "USD",
+        "example": "USD"
+      },
+      "valuation_invoiceAmountLKR": {
+        "type": "number",
+        "title": "[Box 46] Invoice Amount in LKR Equivalent",
+        "default": 9564030,
+        "example": 9564030
+      },
+      "valuation_totalGrossWeight": {
+        "type": "number",
+        "title": "[Box 35] Total Gross Weight (Kilograms)",
+        "default": 22248.24,
+        "example": 22248.24
+      },
+      "packages_totalPackages": {
+        "type": "integer",
+        "title": "[Box 31] Consolidated Packages Count",
+        "default": 13566,
+        "example": 13566
+      },
+      "packages_numberOfLoadingLists": {
+        "type": "integer",
+        "title": "[Box 31] Number of Loading Lists (Optional)",
+        "default": 1,
+        "example": 1
+      },
+      "items": {
+        "type": "array",
+        "title": "Customs Line Items List",
+        "items": {
+          "type": "object",
+          "properties": {
+            "packages_quantity": {
+              "type": "integer",
+              "title": "[Box 31] Line Package Quantity",
+              "default": 13566,
+              "example": 13566
+            },
+            "packages_marks1": {
+              "type": "string",
+              "title": "[Box 31] Marks & Numbers — Line 1 (Optional)",
+              "default": "01X20 FCL",
+              "example": "01X20 FCL"
+            },
+            "packages_marks2": {
+              "type": "string",
+              "title": "[Box 31] Marks & Numbers — Line 2 (Optional)",
+              "default": "13566 CARTONS",
+              "example": "13566 CARTONS"
+            },
+            "packages_kindCode": {
+              "type": "string",
+              "title": "[Box 31] Package Type Code",
+              "default": "CT",
+              "example": "CT"
+            },
+            "packages_kindName": {
+              "type": "string",
+              "title": "[Box 31] Package Type Name (Optional)",
+              "default": "Carton",
+              "example": "Carton"
+            },
+            "hsCode": {
+              "type": "string",
+              "title": "[Box 33] HS Commodity Tariff Code",
+              "default": "20081920",
+              "example": "20081920"
+            },
+            "hsPrecision1": {
+              "type": "string",
+              "title": "[Box 33] HS Precision Extension 1 (Optional)",
+              "default": "00",
+              "example": "00"
+            },
+            "preferenceCode": {
+              "type": "string",
+              "title": "[Box 33] Tariff Preference Code (Optional)",
+              "default": "GSP",
+              "example": "GSP"
+            },
+            "extendedProcedureCode": {
+              "type": "string",
+              "title": "[Box 37] Extended Procedure Code",
+              "default": "1100",
+              "example": "1100"
+            },
+            "nationalProcedureCode": {
+              "type": "string",
+              "title": "[Box 37] National Procedure Code",
+              "default": "000",
+              "example": "000"
+            },
+            "itemPrice": {
+              "type": "number",
+              "title": "[Box 46] Total Price of Item Line (USD)",
+              "default": 31880,
+              "example": 31880
+            },
+            "incoTermsCode": {
+              "type": "string",
+              "title": "[Box 20] Item-Level Incoterms",
+              "default": "FOB",
+              "example": "FOB"
+            },
+            "originCountryCode": {
+              "type": "string",
+              "title": "[Box 17] Country of Origin",
+              "default": "LK",
+              "example": "LK"
+            },
+            "description": {
+              "type": "string",
+              "title": "[Box 31] Goods Description",
+              "default": "CTNS OF HIGH GRADE BLACK TEA",
+              "example": "CTNS OF HIGH GRADE BLACK TEA"
+            },
+            "grossWeight": {
+              "type": "number",
+              "title": "[Box 35] Gross Weight of Item Line (kg)",
+              "default": 22248.24,
+              "example": 22248.24
+            },
+            "netWeight": {
+              "type": "number",
+              "title": "[Box 38] Net Weight of Item Line (kg)",
+              "default": 20349,
+              "example": 20349
+            },
+            "totalCIF": {
+              "type": "number",
+              "title": "[Box 46] Total CIF Value in LKR",
+              "default": 9564030,
+              "example": 9564030
+            },
+            "attached_code": {
+              "type": "string",
+              "title": "[Box 44] Attached Document Code",
+              "default": "CDA",
+              "example": "CDA"
+            },
+            "attached_reference": {
+              "type": "string",
+              "title": "[Box 44] Attached Document Reference Number",
+              "default": "S/R/3153/14/2024",
+              "example": "S/R/3153/14/2024"
+            },
+            "attached_date": {
+              "type": "string",
+              "title": "[Box 44] Attached Document Date (ISO)",
+              "default": "2026-05-11",
+              "example": "2026-05-11"
+            }
+          },
+          "required": [
+            "packages_quantity",
+            "packages_kindCode",
+            "hsCode",
+            "extendedProcedureCode",
+            "nationalProcedureCode",
+            "itemPrice",
+            "incoTermsCode",
+            "originCountryCode",
+            "description",
+            "grossWeight",
+            "netWeight",
+            "totalCIF",
+            "attached_code",
+            "attached_reference",
+            "attached_date"
+          ]
+        },
+        "example": [
+          {
+            "packages_quantity": 13566,
+            "packages_marks1": "01X20 FCL",
+            "packages_marks2": "13566 CARTONS",
+            "packages_kindCode": "CT",
+            "packages_kindName": "Carton",
+            "hsCode": "20081920",
+            "hsPrecision1": "00",
+            "preferenceCode": "GSP",
+            "extendedProcedureCode": "1100",
+            "nationalProcedureCode": "000",
+            "itemPrice": 31880,
+            "incoTermsCode": "FOB",
+            "originCountryCode": "LK",
+            "description": "CTNS OF HIGH GRADE BLACK TEA",
+            "grossWeight": 22248.24,
+            "netWeight": 20349,
+            "totalCIF": 9564030,
+            "attached_code": "CDA",
+            "attached_reference": "S/R/3153/14/2024",
+            "attached_date": "2026-05-11"
+          }
+        ]
+      }
+    },
+    "required": [
+      "nswId",
+      "shipmentType",
+      "identification_officeCode",
+      "identification_declarationType",
+      "identification_generalProcedureCode",
+      "traders_exporter_code",
+      "traders_consignee_name",
+      "traders_declarant_code",
+      "generalInfo_countryOfFirstDestination",
+      "generalInfo_exportCountryCode",
+      "generalInfo_destinationCountryCode",
+      "transport_modeOfTransport",
+      "transport_containerized",
+      "transport_deliveryTermsCode",
+      "transport_borderOfficeCode",
+      "transport_placeOfLoadingCode",
+      "financial_bankCode",
+      "financial_bankBranch",
+      "financial_bankReference",
+      "financial_paymentTermsCode",
+      "financial_modeOfPayment",
+      "valuation_invoiceAmountForeign",
+      "valuation_invoiceCurrencyCode",
+      "valuation_invoiceAmountLKR",
+      "valuation_totalGrossWeight",
+      "packages_totalPackages",
+      "items"
+    ]
+  },
+  "uischema": {
+    "type": "VerticalLayout",
+    "elements": [
+      {
+        "type": "Group",
+        "label": "Top-Level Metadata & Shipment Classification",
+        "elements": [
+          {
+            "type": "Control",
+            "scope": "#/properties/nswId"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/shipmentType"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/containerCount",
+            "rule": {
+              "effect": "SHOW",
+              "condition": {
+                "scope": "#/properties/shipmentType",
+                "schema": {
+                  "const": "FCL"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "Group",
+        "label": "Customs Declaration Identifiers",
+        "elements": [
+          {
+            "type": "Control",
+            "scope": "#/properties/identification_officeCode"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/identification_declarationType"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/identification_generalProcedureCode"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/identification_transitDocumentType"
+          }
+        ]
+      },
+      {
+        "type": "Group",
+        "label": "Traders & Delegated Operators",
+        "elements": [
+          {
+            "type": "Control",
+            "scope": "#/properties/traders_exporter_code"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/traders_consignee_code"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/traders_consignee_name"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/traders_declarant_code"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/traders_declarant_referenceNo"
+          }
+        ]
+      },
+      {
+        "type": "Group",
+        "label": "General Shipment Information",
+        "elements": [
+          {
+            "type": "Control",
+            "scope": "#/properties/generalInfo_countryOfFirstDestination"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/generalInfo_exportCountryCode"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/generalInfo_destinationCountryCode"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/generalInfo_additionalInfo"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/generalInfo_commentsText"
+          }
+        ]
+      },
+      {
+        "type": "Group",
+        "label": "Ocean & Border Transport Logistics",
+        "elements": [
+          {
+            "type": "Control",
+            "scope": "#/properties/transport_vesselName"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/transport_voyageNo"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/transport_modeOfTransport"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/transport_containerized"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/transport_deliveryTermsCode"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/transport_deliveryTermsPlace"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/transport_borderOfficeCode"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/transport_placeOfLoadingCode"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/transport_placeOfLoadingName"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/transport_locationOfGoods"
+          }
+        ]
+      },
+      {
+        "type": "Group",
+        "label": "Settlement & Bank Financial Details",
+        "elements": [
+          {
+            "type": "Control",
+            "scope": "#/properties/financial_bankCode"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/financial_bankName"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/financial_bankBranch"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/financial_bankReference"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/financial_paymentTermsCode"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/financial_modeOfPayment"
+          }
+        ]
+      },
+      {
+        "type": "Group",
+        "label": "Header-Level Customs Valuation",
+        "elements": [
+          {
+            "type": "Control",
+            "scope": "#/properties/valuation_invoiceAmountForeign"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/valuation_invoiceCurrencyCode"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/valuation_invoiceAmountLKR"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/valuation_totalGrossWeight"
+          }
+        ]
+      },
+      {
+        "type": "Group",
+        "label": "Consolidated Packages Summary",
+        "elements": [
+          {
+            "type": "Control",
+            "scope": "#/properties/packages_totalPackages"
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/packages_numberOfLoadingLists"
+          }
+        ]
+      },
+      {
+        "type": "Group",
+        "label": "Tarification Specifications (Multiple Line Item Records)",
+        "elements": [
+          {
+            "type": "Control",
+            "scope": "#/properties/items"
+          }
+        ]
+      }
+    ]
+  }
+}

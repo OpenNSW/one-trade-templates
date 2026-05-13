@@ -1,0 +1,36 @@
+{
+  "id": "customs-apply-cusdec--submit-form",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "cusdec_reg_number": {
+        "type": "string",
+        "title": "ASYCUDA CusDec Registration Number",
+        "default": "C-EXP-2026-98125",
+        "example": "C-EXP-2026-98125"
+      },
+      "duty_breakdown": {
+        "type": "string",
+        "title": "Duty breakdown breakdown summary",
+        "default": "Import levy: $450, Port facility tax: $250, PAL: $300, VAT: $450",
+        "example": "Import levy: $450, Port facility tax: $250, PAL: $300, VAT: $450"
+      }
+    },
+    "required": [
+      "cusdec_reg_number"
+    ]
+  },
+  "uischema": {
+    "type": "VerticalLayout",
+    "elements": [
+      {
+        "type": "Control",
+        "scope": "#/properties/cusdec_reg_number"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/duty_breakdown"
+      }
+    ]
+  }
+}

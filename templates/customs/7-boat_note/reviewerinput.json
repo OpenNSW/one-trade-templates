@@ -1,0 +1,10 @@
+{
+  "template_id": "customs-boat-note--review",
+  "task_type": "APPLICATION",
+  "plugin_name": "generic_external_review",
+  "plugin_properties": {
+    "user_jsonforms_id": "customs-boat-note--user-form",
+    "reviewer_jsonforms_id": "customs-boat-note--review-form",
+    "external_url": "http://localhost:8080/api/mock/boatnote/review"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "wait_for_export_released",
+  "name": "Export Release Process",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "start",
+      "type": "START"
+    },
+    {
+      "id": "main_export_release_task",
+      "type": "TASK",
+      "task_template_id": "wait_for_export_released",
+      "input_mapping": {
+        "customs.cusdec": "cusdec"
+      }
+    },
+    {
+      "id": "end",
+      "type": "END"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source_id": "start",
+      "target_id": "main_export_release_task"
+    },
+    {
+      "id": "e2",
+      "source_id": "main_export_release_task",
+      "target_id": "end"
+    }
+  ]
+}

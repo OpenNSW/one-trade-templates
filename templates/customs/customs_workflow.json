@@ -1,0 +1,197 @@
+{
+  "id": "nsw_export_declaration_mvp",
+  "name": "Customs Export Workflow",
+  "version": 3,
+  "nodes": [
+    {
+      "id": "node_start",
+      "name": "Start Export Declaration",
+      "type": "START"
+    },
+    {
+      "id": "task_apply_cusdec",
+      "name": "CusDec Application",
+      "type": "TASK",
+      "task_template_id": "subworkflow_cusdec_application",
+      "output_mapping": {
+        "shipment_type": "shipment_type",
+        "verification_result.duty_amount": "duty_amount",
+        "submission_result.cusdec_reg_number": "cusdec_reg_number",
+        "userform": "customs.cusdec"
+      }
+    },
+    {
+      "id": "task_await_payment",
+      "name": "Duty Payment",
+      "type": "TASK",
+      "task_template_id": "wait_for_payment_confirmed"
+    },
+    {
+      "id": "task_await_warranting",
+      "name": "Await Warranting Completion",
+      "type": "TASK",
+      "task_template_id": "wait_for_warranting_completed",
+      "input_mapping": {
+        "customs.cusdec": "customs.cusdec"
+      },
+      "output_mapping": {
+        "examinationRequired": "examination_required"
+      }
+    },
+    {
+      "id": "gw_examination_split",
+      "name": "Check Physical Examination Requirement",
+      "type": "GATEWAY",
+      "gateway_type": "EXCLUSIVE_SPLIT"
+    },
+    {
+      "id": "task_physical_examination",
+      "name": "Conduct Physical Examination",
+      "type": "TASK",
+      "task_template_id": "manual_physical_examination",
+      "input_mapping": {
+        "customs.cusdec": "customs.cusdec"
+      }
+    },
+    {
+      "id": "gw_examination_join",
+      "name": "Examination Completion Join",
+      "type": "GATEWAY",
+      "gateway_type": "EXCLUSIVE_JOIN"
+    },
+    {
+      "id": "gw_shipment_type_split",
+      "name": "Split by Shipment Type (FCL/LCL)",
+      "type": "GATEWAY",
+      "gateway_type": "EXCLUSIVE_SPLIT"
+    },
+    {
+      "id": "task_process_fcl_cdn",
+      "name": "Process FCL Cargo Dispatch Notes",
+      "type": "TASK",
+      "task_template_id": "fcl_cdn_submission_and_ack",
+      "input_mapping": {
+        "customs.cusdec": "customs.cusdec"
+      }
+    },
+    {
+      "id": "task_process_lcl_cdn",
+      "name": "Process LCL Cargo Dispatch Notes",
+      "type": "TASK",
+      "task_template_id": "lcl_cdn_external_detection_and_ack",
+      "input_mapping": {
+        "customs.cusdec": "customs.cusdec"
+      }
+    },
+    {
+      "id": "gw_cdn_join",
+      "name": "CDN Processing Join",
+      "type": "GATEWAY",
+      "gateway_type": "EXCLUSIVE_JOIN"
+    },
+    {
+      "id": "task_process_boat_note",
+      "name": "Process Boat Note",
+      "type": "TASK",
+      "task_template_id": "subworkflow_boat_note_processing",
+      "input_mapping": {
+        "customs.cusdec": "customs.cusdec"
+      }
+    },
+    {
+      "id": "task_await_export_release",
+      "name": "Await Export Release",
+      "type": "TASK",
+      "task_template_id": "wait_for_export_released",
+      "input_mapping": {
+        "customs.cusdec": "customs.cusdec"
+      }
+    },
+    {
+      "id": "node_end",
+      "name": "End Export Declaration",
+      "type": "END"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_start_to_apply",
+      "source_id": "node_start",
+      "target_id": "task_apply_cusdec"
+    },
+    {
+      "id": "edge_apply_to_payment",
+      "source_id": "task_apply_cusdec",
+      "target_id": "task_await_payment"
+    },
+    {
+      "id": "edge_payment_to_warranting",
+      "source_id": "task_await_payment",
+      "target_id": "task_await_warranting"
+    },
+    {
+      "id": "edge_warranting_to_exam_split",
+      "source_id": "task_await_warranting",
+      "target_id": "gw_examination_split"
+    },
+    {
+      "id": "edge_exam_required",
+      "source_id": "gw_examination_split",
+      "target_id": "task_physical_examination",
+      "condition": "examination_required == true"
+    },
+    {
+      "id": "edge_exam_not_required",
+      "source_id": "gw_examination_split",
+      "target_id": "gw_examination_join",
+      "condition": "examination_required == false"
+    },
+    {
+      "id": "edge_exam_completed_to_join",
+      "source_id": "task_physical_examination",
+      "target_id": "gw_examination_join"
+    },
+    {
+      "id": "edge_exam_join_to_shipment_split",
+      "source_id": "gw_examination_join",
+      "target_id": "gw_shipment_type_split"
+    },
+    {
+      "id": "edge_shipment_fcl",
+      "source_id": "gw_shipment_type_split",
+      "target_id": "task_process_fcl_cdn",
+      "condition": "shipment_type == 'FCL'"
+    },
+    {
+      "id": "edge_shipment_lcl",
+      "source_id": "gw_shipment_type_split",
+      "target_id": "task_process_lcl_cdn",
+      "condition": "shipment_type == 'LCL'"
+    },
+    {
+      "id": "edge_fcl_to_cdn_join",
+      "source_id": "task_process_fcl_cdn",
+      "target_id": "gw_cdn_join"
+    },
+    {
+      "id": "edge_lcl_to_cdn_join",
+      "source_id": "task_process_lcl_cdn",
+      "target_id": "gw_cdn_join"
+    },
+    {
+      "id": "edge_cdn_join_to_boat_note_process",
+      "source_id": "gw_cdn_join",
+      "target_id": "task_process_boat_note"
+    },
+    {
+      "id": "edge_boat_note_process_to_export_release",
+      "source_id": "task_process_boat_note",
+      "target_id": "task_await_export_release"
+    },
+    {
+      "id": "edge_export_release_to_end",
+      "source_id": "task_await_export_release",
+      "target_id": "node_end"
+    }
+  ]
+}

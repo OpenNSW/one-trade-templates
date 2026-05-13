@@ -1,0 +1,10 @@
+{
+  "template_id": "customs-apply-cusdec--verify",
+  "task_type": "APPLICATION",
+  "plugin_name": "generic_external_review",
+  "plugin_properties": {
+    "user_jsonforms_id": "customs-apply-cusdec--user-form",
+    "reviewer_jsonforms_id": "customs-apply-cusdec--verify-form",
+    "external_url": "http://localhost:8080/api/mock/asycuda/verify"
+  }
+}
