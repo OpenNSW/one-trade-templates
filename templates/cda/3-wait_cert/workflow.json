@@ -1,0 +1,39 @@
+{
+  "id": "WAIT_FOR_EVENT",
+  "name": "CDA Wait on Certificate Issuing",
+  "version": 1,
+  "nodes": [
+    {
+      "id": "start",
+      "type": "START"
+    },
+    {
+      "id": "main_wait_task",
+      "type": "TASK",
+      "task_template_id": "cda-wait-cert--wait-for-event",
+      "input_mapping": {
+        "application_details": "application_details"
+      },
+      "output_mapping": {
+        "reviewerform.salmonella_cert_uri": "salmonella_cert_uri",
+        "reviewerform.quality_cert_uri": "quality_cert_uri"
+      }
+    },
+    {
+      "id": "end",
+      "type": "END"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source_id": "start",
+      "target_id": "main_wait_task"
+    },
+    {
+      "id": "e2",
+      "source_id": "main_wait_task",
+      "target_id": "end"
+    }
+  ]
+}

@@ -1,0 +1,374 @@
+{
+  "id": "cda-apply-cert--user-form",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "email": {
+        "type": "string",
+        "title": "Email Address",
+        "format": "email",
+        "example": "exporter@ceyloncoconut.lk"
+      },
+      "contact_number": {
+        "type": "number",
+        "title": "Contact Number",
+        "default": 9411234567,
+        "example": 94771234567
+      },
+      "payment_category": {
+        "type": "string",
+        "title": "Payment Category Category",
+        "enum": [
+          "Category A - Salmonella Free Cert",
+          "Category B - Physical Quality Cert",
+          "Category C - Combined Certs"
+        ],
+        "default": "Category C - Combined Certs",
+        "example": "Category C - Combined Certs"
+      },
+      "exporter_name": {
+        "type": "string",
+        "title": "Exporter Name & Address",
+        "default": "Ceylon Coconut Products Ltd., Colombo 10",
+        "example": "Ceylon Coconut Products Ltd., Colombo 10"
+      },
+      "exporter_reg_no": {
+        "type": "string",
+        "title": "Exporter Registration Number",
+        "default": "CDA/EXP/2026/0491",
+        "example": "CDA/EXP/2026/0491"
+      },
+      "cusdec_number": {
+        "type": "string",
+        "title": "CusDec Number",
+        "default": "C-29081-2026",
+        "example": "C-29081-2026"
+      },
+      "hs_code": {
+        "type": "number",
+        "title": "HS Code",
+        "default": 15131100,
+        "example": 15131100
+      },
+      "contract_number": {
+        "type": "string",
+        "title": "Contract Number",
+        "example": "CON-4819A"
+      },
+      "lot_no": {
+        "type": "string",
+        "title": "Lot No / Batch Code",
+        "example": "LOT-2026-X8"
+      },
+      "dc_grade": {
+        "type": "string",
+        "title": "DC Grade Category",
+        "enum": [
+          "Fine Grade",
+          "Medium Grade",
+          "Coarse Grade",
+          "Super Fine"
+        ],
+        "default": "Medium Grade",
+        "example": "Medium Grade"
+      },
+      "bags_count": {
+        "type": "number",
+        "title": "Number of Bags",
+        "default": 250,
+        "example": 250
+      },
+      "bag_weight_kg": {
+        "type": "number",
+        "title": "Weight of Bag (Kg)",
+        "default": 25,
+        "example": 25
+      },
+      "total_weight_kg": {
+        "type": "number",
+        "title": "Total Weight (Kg)",
+        "default": 6250,
+        "example": 6250
+      },
+      "date_containerization": {
+        "type": "string",
+        "title": "Date of Containerization",
+        "format": "date",
+        "example": "2026-05-15"
+      },
+      "vessel_name": {
+        "type": "string",
+        "title": "Name of the Vessel",
+        "default": "MSC Beatrice",
+        "example": "MSC Beatrice"
+      },
+      "container_number": {
+        "type": "string",
+        "title": "Container Number",
+        "default": "MSCU7819204",
+        "example": "MSCU7819204"
+      },
+      "sailing_date": {
+        "type": "string",
+        "title": "Date of Sailing",
+        "format": "date",
+        "example": "2026-05-18"
+      },
+      "port_of_discharge": {
+        "type": "string",
+        "title": "Port of Discharge",
+        "default": "Hamburg (DEHAM)",
+        "example": "Hamburg (DEHAM)"
+      },
+      "final_destination": {
+        "type": "string",
+        "title": "Final Destination",
+        "default": "Germany",
+        "example": "Germany"
+      },
+      "buyer_name": {
+        "type": "string",
+        "title": "Name of the Buyer",
+        "default": "Hansa Foods GmbH",
+        "example": "Hansa Foods GmbH"
+      },
+      "container_filling_status": {
+        "type": "string",
+        "title": "Container Filling Status Option",
+        "enum": [
+          "Full Container Load (FCL)",
+          "Less Container Load (LCL)"
+        ],
+        "default": "Full Container Load (FCL)",
+        "example": "Full Container Load (FCL)"
+      },
+      "nature_balance_material": {
+        "type": "string",
+        "title": "Nature of Balance Material (If Part)",
+        "example": "N/A - FCL Shipment"
+      },
+      "requested_salmonella_cert": {
+        "type": "boolean",
+        "title": "Request Salmonella Free Certificate?",
+        "default": true,
+        "example": true
+      },
+      "requested_quality_cert": {
+        "type": "boolean",
+        "title": "Request Physical Quality Certificate?",
+        "default": true,
+        "example": true
+      },
+      "mill_number": {
+        "type": "string",
+        "title": "Mill Number / Facility Code",
+        "default": "MILL-481",
+        "example": "MILL-481"
+      },
+      "production_date": {
+        "type": "string",
+        "title": "Production Date",
+        "format": "date",
+        "example": "2026-05-10"
+      },
+      "label_code": {
+        "type": "string",
+        "title": "Label Code",
+        "default": "LBL-CDA-Medium",
+        "example": "LBL-CDA-Medium"
+      },
+      "label_start_no": {
+        "type": "string",
+        "title": "Label Start Number",
+        "default": "00001",
+        "example": "00001"
+      },
+      "label_end_no": {
+        "type": "string",
+        "title": "Label End Number",
+        "default": "00250",
+        "example": "00250"
+      },
+      "bags_requested": {
+        "type": "number",
+        "title": "Number of Bags on Request",
+        "default": 250,
+        "example": 250
+      },
+      "product_type": {
+        "type": "string",
+        "title": "Product Type Name",
+        "default": "Desiccated Coconut",
+        "example": "Desiccated Coconut"
+      },
+      "total_bags": {
+        "type": "number",
+        "title": "Total Number of Bags",
+        "default": 250,
+        "example": 250
+      }
+    },
+    "required": [
+      "email",
+      "contact_number",
+      "payment_category",
+      "exporter_name",
+      "exporter_reg_no",
+      "cusdec_number",
+      "hs_code",
+      "dc_grade",
+      "bags_count",
+      "bag_weight_kg",
+      "total_weight_kg",
+      "date_containerization",
+      "vessel_name",
+      "container_number",
+      "sailing_date",
+      "port_of_discharge",
+      "final_destination",
+      "buyer_name",
+      "container_filling_status",
+      "mill_number",
+      "production_date",
+      "label_code",
+      "label_start_no",
+      "label_end_no",
+      "bags_requested",
+      "product_type",
+      "total_bags"
+    ]
+  },
+  "uischema": {
+    "type": "VerticalLayout",
+    "elements": [
+      {
+        "type": "Control",
+        "scope": "#/properties/email"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/contact_number"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/payment_category"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/exporter_name"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/exporter_reg_no"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/cusdec_number"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/hs_code"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/contract_number"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/lot_no"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/dc_grade"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/bags_count"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/bag_weight_kg"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/total_weight_kg"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/date_containerization"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/vessel_name"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/container_number"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/sailing_date"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/port_of_discharge"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/final_destination"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/buyer_name"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/container_filling_status"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/nature_balance_material"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/requested_salmonella_cert"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/requested_quality_cert"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/mill_number"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/production_date"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/label_code"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/label_start_no"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/label_end_no"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/bags_requested"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/product_type"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/total_bags"
+      }
+    ]
+  }
+}
