@@ -1,5 +1,5 @@
 {
-  "id": "fcl_cdn_submission_and_ack",
+  "id": "customs-fcl-cdn-flow",
   "name": "Process FCL Cargo Dispatch Notes",
   "version": 1,
   "nodes": [

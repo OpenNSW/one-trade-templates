@@ -1,5 +1,5 @@
 {
-  "id": "wait_for_export_released",
+  "id": "customs-export-release-flow",
   "name": "Export Release Process",
   "version": 1,
   "nodes": [
@@ -10,7 +10,7 @@
     {
       "id": "main_export_release_task",
       "type": "TASK",
-      "task_template_id": "wait_for_export_released",
+      "task_template_id": "customs-export-release--wait",
       "input_mapping": {
         "customs.cusdec": "cusdec"
       }

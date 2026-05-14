@@ -1,5 +1,5 @@
 {
-  "id": "wait_for_warranting_completed",
+  "id": "customs-warranting-flow",
   "name": "Warranting Verification Process",
   "version": 1,
   "nodes": [
@@ -10,7 +10,7 @@
     {
       "id": "main_warranting_task",
       "type": "TASK",
-      "task_template_id": "wait_for_warranting_completed",
+      "task_template_id": "customs-warranting--wait",
       "input_mapping": {
         "customs.cusdec": "cusdec"
       },

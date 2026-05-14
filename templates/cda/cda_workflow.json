@@ -1,5 +1,5 @@
 {
-  "id": "nsw_cert_issuance_wf",
+  "id": "cda-quality-cert-issuance-reg",
   "name": "Issuance of Salmonella Free and Physical Quality Certificates",
   "version": 1,
   "nodes": [
@@ -12,7 +12,7 @@
       "id": "node_submit_app",
       "name": "[CDA 1.0] Submit Application",
       "type": "TASK",
-      "task_template_id": "SIMPLE_FORM",
+      "task_template_id": "cda-apply-cert-flow",
       "output_mapping": {
         "application_id": "cda.application_id",
         "payment_amount": "cda.payment_amount",
@@ -25,7 +25,7 @@
       "id": "node_make_payment",
       "name": "[CDA 2.0] Make Payment",
       "type": "TASK",
-      "task_template_id": "PAYMENT",
+      "task_template_id": "cda-pay-app-fee-flow",
       "input_mapping": {
         "cda.application_id": "application_id",
         "cda.payment_amount": "payment_amount"
@@ -38,7 +38,7 @@
       "id": "node_wait_cert",
       "name": "[CDA 3.0] Wait on Certificate Issuing",
       "type": "TASK",
-      "task_template_id": "WAIT_FOR_EVENT",
+      "task_template_id": "cda-wait-cert-flow",
       "input_mapping": {
         "cda.application_id": "application_id",
         "cda.requested_salmonella_cert": "requested_salmonella_cert",

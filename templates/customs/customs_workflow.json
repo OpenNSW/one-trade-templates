@@ -1,5 +1,5 @@
 {
-  "id": "nsw_export_declaration_mvp",
+  "id": "customs-export-declaration-reg",
   "name": "Customs Export Workflow",
   "version": 3,
   "nodes": [
@@ -12,7 +12,7 @@
       "id": "task_apply_cusdec",
       "name": "CusDec Application",
       "type": "TASK",
-      "task_template_id": "subworkflow_cusdec_application",
+      "task_template_id": "customs-apply-cusdec-flow",
       "output_mapping": {
         "shipment_type": "shipment_type",
         "verification_result.duty_amount": "duty_amount",
@@ -24,13 +24,13 @@
       "id": "task_await_payment",
       "name": "Duty Payment",
       "type": "TASK",
-      "task_template_id": "wait_for_payment_confirmed"
+      "task_template_id": "customs-payment-flow"
     },
     {
       "id": "task_await_warranting",
       "name": "Await Warranting Completion",
       "type": "TASK",
-      "task_template_id": "wait_for_warranting_completed",
+      "task_template_id": "customs-warranting-flow",
       "input_mapping": {
         "customs.cusdec": "customs.cusdec"
       },
@@ -48,7 +48,7 @@
       "id": "task_physical_examination",
       "name": "Conduct Physical Examination",
       "type": "TASK",
-      "task_template_id": "manual_physical_examination",
+      "task_template_id": "customs-physical-exam-flow",
       "input_mapping": {
         "customs.cusdec": "customs.cusdec"
       }
@@ -69,7 +69,7 @@
       "id": "task_process_fcl_cdn",
       "name": "Process FCL Cargo Dispatch Notes",
       "type": "TASK",
-      "task_template_id": "fcl_cdn_submission_and_ack",
+      "task_template_id": "customs-fcl-cdn-flow",
       "input_mapping": {
         "customs.cusdec": "customs.cusdec"
       }
@@ -78,7 +78,7 @@
       "id": "task_process_lcl_cdn",
       "name": "Process LCL Cargo Dispatch Notes",
       "type": "TASK",
-      "task_template_id": "lcl_cdn_external_detection_and_ack",
+      "task_template_id": "customs-lcl-cdn-flow",
       "input_mapping": {
         "customs.cusdec": "customs.cusdec"
       }
@@ -93,7 +93,7 @@
       "id": "task_process_boat_note",
       "name": "Process Boat Note",
       "type": "TASK",
-      "task_template_id": "subworkflow_boat_note_processing",
+      "task_template_id": "customs-boat-note-flow",
       "input_mapping": {
         "customs.cusdec": "customs.cusdec"
       }
@@ -102,7 +102,7 @@
       "id": "task_await_export_release",
       "name": "Await Export Release",
       "type": "TASK",
-      "task_template_id": "wait_for_export_released",
+      "task_template_id": "customs-export-release-flow",
       "input_mapping": {
         "customs.cusdec": "customs.cusdec"
       }

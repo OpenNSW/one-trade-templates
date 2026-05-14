@@ -1,5 +1,5 @@
 {
-  "id": "subworkflow_cusdec_application",
+  "id": "customs-apply-cusdec-flow",
   "name": "CusDec Application Process",
   "version": 1,
   "nodes": [

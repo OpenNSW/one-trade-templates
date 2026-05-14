@@ -1,5 +1,5 @@
 {
-  "id": "PAYMENT",
+  "id": "cda-pay-app-fee-flow",
   "name": "CDA Payment Process",
   "version": 1,
   "nodes": [
@@ -10,7 +10,7 @@
     {
       "id": "main_payment_task",
       "type": "TASK",
-      "task_template_id": "PAYMENT",
+      "task_template_id": "cda-pay-app-fee--payment",
       "output_mapping": {
         "payment_status": "payment_status"
       }

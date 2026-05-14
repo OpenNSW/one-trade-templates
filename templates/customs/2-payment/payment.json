@@ -1,5 +1,5 @@
 {
-  "template_id": "wait_for_payment_confirmed",
+  "id": "customs-payment--wait",
   "task_type": "PAYMENT",
   "plugin_name": "generic_payment",
   "plugin_properties": {

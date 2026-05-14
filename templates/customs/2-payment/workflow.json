@@ -1,5 +1,5 @@
 {
-  "id": "wait_for_payment_confirmed",
+  "id": "customs-payment-flow",
   "name": "Duty Payment Process",
   "version": 1,
   "nodes": [
@@ -10,7 +10,7 @@
     {
       "id": "main_payment_task",
       "type": "TASK",
-      "task_template_id": "wait_for_payment_confirmed"
+      "task_template_id": "customs-payment--wait"
     },
     {
       "id": "end",

@@ -1,5 +1,5 @@
 {
-  "id": "WAIT_FOR_EVENT",
+  "id": "cda-wait-cert-flow",
   "name": "CDA Wait on Certificate Issuing",
   "version": 1,
   "nodes": [
