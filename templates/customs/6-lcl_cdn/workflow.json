@@ -1,5 +1,5 @@
 {
-  "id": "lcl_cdn_external_detection_and_ack",
+  "id": "customs-lcl-cdn-flow",
   "name": "Process LCL Cargo Dispatch Notes",
   "version": 1,
   "nodes": [

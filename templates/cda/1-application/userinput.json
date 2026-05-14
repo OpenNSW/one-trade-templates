@@ -1,5 +1,5 @@
 {
-  "template_id": "cda-apply-cert--user-input",
+  "id": "cda-apply-cert--user-input",
   "task_type": "APPLICATION",
   "plugin_name": "generic_user_input",
   "plugin_properties": {

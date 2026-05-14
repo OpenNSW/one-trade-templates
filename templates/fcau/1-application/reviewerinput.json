@@ -1,5 +1,5 @@
 {
-  "template_id": "fcau-apply-health-cert--external-review",
+  "id": "fcau-apply-health-cert--external-review",
   "task_type": "APPLICATION",
   "plugin_name": "generic_external_review",
   "plugin_properties": {

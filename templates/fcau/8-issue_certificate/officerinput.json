@@ -1,5 +1,5 @@
 {
-  "template_id": "fcau-issue-certificate--officer-review",
+  "id": "fcau-issue-certificate--officer-review",
   "task_type": "APPLICATION",
   "plugin_name": "generic_officer_input",
   "plugin_properties": {

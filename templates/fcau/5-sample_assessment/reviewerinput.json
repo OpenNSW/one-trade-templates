@@ -1,5 +1,5 @@
 {
-  "template_id": "fcau-sample-assessment--officer-review",
+  "id": "fcau-sample-assessment--officer-review",
   "task_type": "APPLICATION",
   "plugin_name": "generic_officer_input",
   "plugin_properties": {

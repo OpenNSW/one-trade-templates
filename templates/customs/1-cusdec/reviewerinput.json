@@ -1,5 +1,5 @@
 {
-  "template_id": "customs-apply-cusdec--verify",
+  "id": "customs-apply-cusdec--verify",
   "task_type": "APPLICATION",
   "plugin_name": "generic_external_review",
   "plugin_properties": {

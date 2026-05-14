@@ -1,5 +1,5 @@
 {
-  "template_id": "customs-lcl-cdn--wait-ack",
+  "id": "customs-lcl-cdn--wait-ack",
   "task_type": "WAIT_FOR_EVENT",
   "plugin_name": "register_task_and_wait",
   "plugin_properties": {

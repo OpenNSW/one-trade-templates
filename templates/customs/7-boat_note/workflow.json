@@ -1,5 +1,5 @@
 {
-  "id": "subworkflow_boat_note_processing",
+  "id": "customs-boat-note-flow",
   "name": "Process Boat Note",
   "version": 1,
   "nodes": [

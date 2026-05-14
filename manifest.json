@@ -1,0 +1,363 @@
+{
+  "version": "0.0.0-dev",
+  "generated": "scripts/generate-manifest.mjs",
+  "workflows": [
+    {
+      "id": "cda-quality-cert-issuance-reg",
+      "name": "CDA — Certificate of Domestic Availability",
+      "definition": "templates/cda/cda_workflow.json",
+      "steps": [
+        {
+          "directory": "templates/cda/1-application/",
+          "files": [
+            "templates/cda/1-application/reviewerinput.json",
+            "templates/cda/1-application/reviewerinput_jsonform.json",
+            "templates/cda/1-application/userinput.json",
+            "templates/cda/1-application/userinput_jsonform.json",
+            "templates/cda/1-application/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/cda/2-payment/",
+          "files": [
+            "templates/cda/2-payment/payment.json",
+            "templates/cda/2-payment/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/cda/3-wait_cert/",
+          "files": [
+            "templates/cda/3-wait_cert/reviewerinput_jsonform.json",
+            "templates/cda/3-wait_cert/wait_cert.json",
+            "templates/cda/3-wait_cert/workflow.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "customs-export-declaration-reg",
+      "name": "Customs Declaration",
+      "definition": "templates/customs/customs_workflow.json",
+      "steps": [
+        {
+          "directory": "templates/customs/1-cusdec/",
+          "files": [
+            "templates/customs/1-cusdec/reviewerinput.json",
+            "templates/customs/1-cusdec/reviewerinput_jsonform.json",
+            "templates/customs/1-cusdec/submit.json",
+            "templates/customs/1-cusdec/submitinput_jsonform.json",
+            "templates/customs/1-cusdec/userinput.json",
+            "templates/customs/1-cusdec/userinput_jsonform.json",
+            "templates/customs/1-cusdec/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/customs/2-payment/",
+          "files": [
+            "templates/customs/2-payment/payment.json",
+            "templates/customs/2-payment/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/customs/3-warranting/",
+          "files": [
+            "templates/customs/3-warranting/warranting.json",
+            "templates/customs/3-warranting/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/customs/4-physical_exam/",
+          "files": [
+            "templates/customs/4-physical_exam/exam.json",
+            "templates/customs/4-physical_exam/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/customs/5-fcl_cdn/",
+          "files": [
+            "templates/customs/5-fcl_cdn/userinput.json",
+            "templates/customs/5-fcl_cdn/userinput_jsonform.json",
+            "templates/customs/5-fcl_cdn/waitack.json",
+            "templates/customs/5-fcl_cdn/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/customs/6-lcl_cdn/",
+          "files": [
+            "templates/customs/6-lcl_cdn/userinput.json",
+            "templates/customs/6-lcl_cdn/userinput_jsonform.json",
+            "templates/customs/6-lcl_cdn/waitack.json",
+            "templates/customs/6-lcl_cdn/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/customs/7-boat_note/",
+          "files": [
+            "templates/customs/7-boat_note/reviewerinput.json",
+            "templates/customs/7-boat_note/reviewerinput_jsonform.json",
+            "templates/customs/7-boat_note/userinput.json",
+            "templates/customs/7-boat_note/userinput_jsonform.json",
+            "templates/customs/7-boat_note/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/customs/8-export_release/",
+          "files": [
+            "templates/customs/8-export_release/release.json",
+            "templates/customs/8-export_release/workflow.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fcau-health-certificate-reg",
+      "name": "FCAU — Food & Chemical Analysis Unit",
+      "definition": "templates/fcau/fcau_workflow.json",
+      "steps": [
+        {
+          "directory": "templates/fcau/1-application/",
+          "files": [
+            "templates/fcau/1-application/reviewerinput.json",
+            "templates/fcau/1-application/reviewerinput_jsonform.json",
+            "templates/fcau/1-application/userinput.json",
+            "templates/fcau/1-application/userinput_jsonform.json",
+            "templates/fcau/1-application/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/fcau/2-payment_app_fee/",
+          "files": [
+            "templates/fcau/2-payment_app_fee/payment.json",
+            "templates/fcau/2-payment_app_fee/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/fcau/3-sample_decision/",
+          "files": [
+            "templates/fcau/3-sample_decision/reviewerinput.json",
+            "templates/fcau/3-sample_decision/reviewerinput_jsonform.json",
+            "templates/fcau/3-sample_decision/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/fcau/4-wait_on_sample/",
+          "files": [
+            "templates/fcau/4-wait_on_sample/register_task_and_wait.json",
+            "templates/fcau/4-wait_on_sample/register_task_and_wait_jsonform.json",
+            "templates/fcau/4-wait_on_sample/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/fcau/5-sample_assessment/",
+          "files": [
+            "templates/fcau/5-sample_assessment/reviewerinput.json",
+            "templates/fcau/5-sample_assessment/reviewerinput_jsonform.json",
+            "templates/fcau/5-sample_assessment/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/fcau/6-payment_lab_fee/",
+          "files": [
+            "templates/fcau/6-payment_lab_fee/payment.json",
+            "templates/fcau/6-payment_lab_fee/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/fcau/7-lab_test/",
+          "files": [
+            "templates/fcau/7-lab_test/register_task_and_wait.json",
+            "templates/fcau/7-lab_test/register_task_and_wait_jsonform.json",
+            "templates/fcau/7-lab_test/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/fcau/8-issue_certificate/",
+          "files": [
+            "templates/fcau/8-issue_certificate/officerinput.json",
+            "templates/fcau/8-issue_certificate/officerinput_jsonform.json",
+            "templates/fcau/8-issue_certificate/workflow.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "npqs-export-phytosanitary-reg",
+      "name": "NPQS — Export Consignment & Phytosanitary Registration",
+      "definition": "templates/npqs/npqs_workflow.json",
+      "steps": [
+        {
+          "directory": "templates/npqs/1-application/",
+          "files": [
+            "templates/npqs/1-application/reviewerinput.json",
+            "templates/npqs/1-application/reviewerinput_jsonform.json",
+            "templates/npqs/1-application/userinput.json",
+            "templates/npqs/1-application/userinput_jsonform.json",
+            "templates/npqs/1-application/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/npqs/2-wait_on_sample/",
+          "files": [
+            "templates/npqs/2-wait_on_sample/register_task_and_wait.json",
+            "templates/npqs/2-wait_on_sample/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/npqs/3-wait_on_lab_results/",
+          "files": [
+            "templates/npqs/3-wait_on_lab_results/register_task_and_wait.json",
+            "templates/npqs/3-wait_on_lab_results/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/npqs/4-wait_on_fumigation_decision/",
+          "files": [
+            "templates/npqs/4-wait_on_fumigation_decision/register_task_and_wait.json",
+            "templates/npqs/4-wait_on_fumigation_decision/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/npqs/5-check_visual_inspection_requirement/",
+          "files": [
+            "templates/npqs/5-check_visual_inspection_requirement/register_task_and_wait.json",
+            "templates/npqs/5-check_visual_inspection_requirement/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/npqs/6-visual_inspection_result/",
+          "files": [
+            "templates/npqs/6-visual_inspection_result/register_task_and_wait.json",
+            "templates/npqs/6-visual_inspection_result/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/npqs/7-submit_shipping_docs/",
+          "files": [
+            "templates/npqs/7-submit_shipping_docs/reviewerinput.json",
+            "templates/npqs/7-submit_shipping_docs/reviewerinput_jsonform.json",
+            "templates/npqs/7-submit_shipping_docs/userinput.json",
+            "templates/npqs/7-submit_shipping_docs/userinput_jsonform.json",
+            "templates/npqs/7-submit_shipping_docs/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/npqs/8-payment/",
+          "files": [
+            "templates/npqs/8-payment/payment.json",
+            "templates/npqs/8-payment/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/npqs/9-issue_certificate/",
+          "files": [
+            "templates/npqs/9-issue_certificate/officerinput.json",
+            "templates/npqs/9-issue_certificate/officerinput_jsonform.json",
+            "templates/npqs/9-issue_certificate/workflow.json"
+          ]
+        },
+        {
+          "directory": "templates/npqs/10-upload_to_ippc/",
+          "files": [
+            "templates/npqs/10-upload_to_ippc/http_post.json",
+            "templates/npqs/10-upload_to_ippc/workflow.json"
+          ]
+        }
+      ]
+    }
+  ],
+  "byId": {
+    "cda-apply-cert--reviewer-form": "templates/cda/1-application/reviewerinput_jsonform.json",
+    "cda-apply-cert--reviewer-review": "templates/cda/1-application/reviewerinput.json",
+    "cda-apply-cert--user-form": "templates/cda/1-application/userinput_jsonform.json",
+    "cda-apply-cert--user-input": "templates/cda/1-application/userinput.json",
+    "cda-apply-cert-flow": "templates/cda/1-application/workflow.json",
+    "cda-pay-app-fee--payment": "templates/cda/2-payment/payment.json",
+    "cda-pay-app-fee-flow": "templates/cda/2-payment/workflow.json",
+    "cda-quality-cert-issuance-reg": "templates/cda/cda_workflow.json",
+    "cda-wait-cert--reviewer-form": "templates/cda/3-wait_cert/reviewerinput_jsonform.json",
+    "cda-wait-cert--wait-for-event": "templates/cda/3-wait_cert/wait_cert.json",
+    "cda-wait-cert-flow": "templates/cda/3-wait_cert/workflow.json",
+    "customs-apply-cusdec--submit": "templates/customs/1-cusdec/submit.json",
+    "customs-apply-cusdec--submit-form": "templates/customs/1-cusdec/submitinput_jsonform.json",
+    "customs-apply-cusdec--user-form": "templates/customs/1-cusdec/userinput_jsonform.json",
+    "customs-apply-cusdec--user-input": "templates/customs/1-cusdec/userinput.json",
+    "customs-apply-cusdec--verify": "templates/customs/1-cusdec/reviewerinput.json",
+    "customs-apply-cusdec--verify-form": "templates/customs/1-cusdec/reviewerinput_jsonform.json",
+    "customs-apply-cusdec-flow": "templates/customs/1-cusdec/workflow.json",
+    "customs-boat-note--review": "templates/customs/7-boat_note/reviewerinput.json",
+    "customs-boat-note--review-form": "templates/customs/7-boat_note/reviewerinput_jsonform.json",
+    "customs-boat-note--user-form": "templates/customs/7-boat_note/userinput_jsonform.json",
+    "customs-boat-note--user-input": "templates/customs/7-boat_note/userinput.json",
+    "customs-boat-note-flow": "templates/customs/7-boat_note/workflow.json",
+    "customs-export-declaration-reg": "templates/customs/customs_workflow.json",
+    "customs-export-release--wait": "templates/customs/8-export_release/release.json",
+    "customs-export-release-flow": "templates/customs/8-export_release/workflow.json",
+    "customs-fcl-cdn--user-form": "templates/customs/5-fcl_cdn/userinput_jsonform.json",
+    "customs-fcl-cdn--user-input": "templates/customs/5-fcl_cdn/userinput.json",
+    "customs-fcl-cdn--wait-ack": "templates/customs/5-fcl_cdn/waitack.json",
+    "customs-fcl-cdn-flow": "templates/customs/5-fcl_cdn/workflow.json",
+    "customs-lcl-cdn--user-form": "templates/customs/6-lcl_cdn/userinput_jsonform.json",
+    "customs-lcl-cdn--user-input": "templates/customs/6-lcl_cdn/userinput.json",
+    "customs-lcl-cdn--wait-ack": "templates/customs/6-lcl_cdn/waitack.json",
+    "customs-lcl-cdn-flow": "templates/customs/6-lcl_cdn/workflow.json",
+    "customs-payment--wait": "templates/customs/2-payment/payment.json",
+    "customs-payment-flow": "templates/customs/2-payment/workflow.json",
+    "customs-physical-exam--wait": "templates/customs/4-physical_exam/exam.json",
+    "customs-physical-exam-flow": "templates/customs/4-physical_exam/workflow.json",
+    "customs-warranting--wait": "templates/customs/3-warranting/warranting.json",
+    "customs-warranting-flow": "templates/customs/3-warranting/workflow.json",
+    "fcau-apply-health-cert--external-review": "templates/fcau/1-application/reviewerinput.json",
+    "fcau-apply-health-cert--reviewer-form": "templates/fcau/1-application/reviewerinput_jsonform.json",
+    "fcau-apply-health-cert--user-form": "templates/fcau/1-application/userinput_jsonform.json",
+    "fcau-apply-health-cert--user-input": "templates/fcau/1-application/userinput.json",
+    "fcau-apply-health-cert-flow": "templates/fcau/1-application/workflow.json",
+    "fcau-health-certificate-reg": "templates/fcau/fcau_workflow.json",
+    "fcau-issue-certificate--officer-form": "templates/fcau/8-issue_certificate/officerinput_jsonform.json",
+    "fcau-issue-certificate--officer-review": "templates/fcau/8-issue_certificate/officerinput.json",
+    "fcau-issue-certificate-flow": "templates/fcau/8-issue_certificate/workflow.json",
+    "fcau-lab-test--officer-form": "templates/fcau/7-lab_test/register_task_and_wait_jsonform.json",
+    "fcau-lab-test--wait": "templates/fcau/7-lab_test/register_task_and_wait.json",
+    "fcau-lab-test-flow": "templates/fcau/7-lab_test/workflow.json",
+    "fcau-pay-app-fee--payment": "templates/fcau/2-payment_app_fee/payment.json",
+    "fcau-pay-app-fee-flow": "templates/fcau/2-payment_app_fee/workflow.json",
+    "fcau-pay-lab-fee--payment": "templates/fcau/6-payment_lab_fee/payment.json",
+    "fcau-pay-lab-fee-flow": "templates/fcau/6-payment_lab_fee/workflow.json",
+    "fcau-sample-assessment--officer-review": "templates/fcau/5-sample_assessment/reviewerinput.json",
+    "fcau-sample-assessment--reviewer-form": "templates/fcau/5-sample_assessment/reviewerinput_jsonform.json",
+    "fcau-sample-assessment-flow": "templates/fcau/5-sample_assessment/workflow.json",
+    "fcau-sample-decision--officer-review": "templates/fcau/3-sample_decision/reviewerinput.json",
+    "fcau-sample-decision--reviewer-form": "templates/fcau/3-sample_decision/reviewerinput_jsonform.json",
+    "fcau-sample-decision-flow": "templates/fcau/3-sample_decision/workflow.json",
+    "fcau-sample-wait--reviewer-form": "templates/fcau/4-wait_on_sample/register_task_and_wait_jsonform.json",
+    "fcau-wait-sample--wait": "templates/fcau/4-wait_on_sample/register_task_and_wait.json",
+    "fcau-wait-sample-flow": "templates/fcau/4-wait_on_sample/workflow.json",
+    "npqs-apply-phyto-cert--officer-review": "templates/npqs/1-application/reviewerinput.json",
+    "npqs-apply-phyto-cert--reviewer-form": "templates/npqs/1-application/reviewerinput_jsonform.json",
+    "npqs-apply-phyto-cert--user-form": "templates/npqs/1-application/userinput_jsonform.json",
+    "npqs-apply-phyto-cert--user-input": "templates/npqs/1-application/userinput.json",
+    "npqs-apply-phyto-cert-flow": "templates/npqs/1-application/workflow.json",
+    "npqs-check-visual-requirement--wait": "templates/npqs/5-check_visual_inspection_requirement/register_task_and_wait.json",
+    "npqs-export-phytosanitary-reg": "templates/npqs/npqs_workflow.json",
+    "npqs-issue-certificate--officer-form": "templates/npqs/9-issue_certificate/officerinput_jsonform.json",
+    "npqs-issue-certificate--officer-input": "templates/npqs/9-issue_certificate/officerinput.json",
+    "npqs-issue-certificate-flow": "templates/npqs/9-issue_certificate/workflow.json",
+    "npqs-pay-certificate-fee--payment": "templates/npqs/8-payment/payment.json",
+    "npqs-pay-certificate-fee-flow": "templates/npqs/8-payment/workflow.json",
+    "npqs-submit-shipping-docs--officer-review": "templates/npqs/7-submit_shipping_docs/reviewerinput.json",
+    "npqs-submit-shipping-docs--reviewer-form": "templates/npqs/7-submit_shipping_docs/reviewerinput_jsonform.json",
+    "npqs-submit-shipping-docs--user-form": "templates/npqs/7-submit_shipping_docs/userinput_jsonform.json",
+    "npqs-submit-shipping-docs--user-input": "templates/npqs/7-submit_shipping_docs/userinput.json",
+    "npqs-submit-shipping-docs-flow": "templates/npqs/7-submit_shipping_docs/workflow.json",
+    "npqs-upload-ippc--post": "templates/npqs/10-upload_to_ippc/http_post.json",
+    "npqs-upload-ippc-flow": "templates/npqs/10-upload_to_ippc/workflow.json",
+    "npqs-visual-inspection-result-flow": "templates/npqs/6-visual_inspection_result/workflow.json",
+    "npqs-wait-fumigation--wait": "templates/npqs/4-wait_on_fumigation_decision/register_task_and_wait.json",
+    "npqs-wait-fumigation-flow": "templates/npqs/4-wait_on_fumigation_decision/workflow.json",
+    "npqs-wait-lab-result--wait": "templates/npqs/3-wait_on_lab_results/register_task_and_wait.json",
+    "npqs-wait-lab-result-flow": "templates/npqs/3-wait_on_lab_results/workflow.json",
+    "npqs-wait-sample-received--wait": "templates/npqs/2-wait_on_sample/register_task_and_wait.json",
+    "npqs-wait-sample-received-flow": "templates/npqs/2-wait_on_sample/workflow.json",
+    "npqs-wait-visual-decision-flow": "templates/npqs/5-check_visual_inspection_requirement/workflow.json",
+    "npqs-wait-visual-result--wait": "templates/npqs/6-visual_inspection_result/register_task_and_wait.json"
+  }
+}

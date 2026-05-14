@@ -1,5 +1,5 @@
 {
-  "id": "manual_physical_examination",
+  "id": "customs-physical-exam-flow",
   "name": "Physical Examination Process",
   "version": 1,
   "nodes": [
@@ -10,7 +10,7 @@
     {
       "id": "main_physical_exam_task",
       "type": "TASK",
-      "task_template_id": "manual_physical_examination",
+      "task_template_id": "customs-physical-exam--wait",
       "input_mapping": {
         "customs.cusdec": "cusdec"
       }

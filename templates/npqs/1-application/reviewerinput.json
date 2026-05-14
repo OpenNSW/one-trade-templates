@@ -1,5 +1,5 @@
 {
-  "template_id": "npqs-apply-phyto-cert--officer-review",
+  "id": "npqs-apply-phyto-cert--officer-review",
   "task_type": "APPLICATION",
   "plugin_name": "generic_external_review",
   "plugin_properties": {

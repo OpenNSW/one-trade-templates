@@ -12,16 +12,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Go
-        uses: actions/setup-go@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          go-version-file: go.mod
-          cache: true
-      - name: Go fmt
-        run: test -z "$(gofmt -l .)"
-      - name: JSON lint
-        run: go run ./cmd/jsonlint
-      - name: Go vet
-        run: go vet ./...
-      - name: Go test
-        run: go test ./...
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Prettier check
+        run: npm run lint
+
+      - name: Validate templates
+        run: npm run validate
+
+      - name: Manifest in sync
+        run: |
+          npm run manifest
+          git diff --exit-code manifest.json
