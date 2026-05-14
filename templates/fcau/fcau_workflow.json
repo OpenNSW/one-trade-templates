@@ -222,13 +222,13 @@
       "id": "e_sample_no",
       "source_id": "fcau_sample_split",
       "target_id": "fcau_join_approval",
-      "condition": "fcau.sample_required == false"
+      "condition": "fcau.sample_required == 'no'"
     },
     {
       "id": "e_sample_yes",
       "source_id": "fcau_sample_split",
       "target_id": "fcau_3_wait_sample",
-      "condition": "fcau.sample_required == true"
+      "condition": "fcau.sample_required == 'yes'"
     },
     {
       "id": "e_wait_sample_to_assess",
@@ -244,13 +244,13 @@
       "id": "e_lab_no",
       "source_id": "fcau_lab_split",
       "target_id": "fcau_join_approval",
-      "condition": "fcau.lab_test_required == false"
+      "condition": "fcau.lab_test_required == 'no'"
     },
     {
       "id": "e_lab_yes",
       "source_id": "fcau_lab_split",
       "target_id": "fcau_4_pay_lab_fee",
-      "condition": "fcau.lab_test_required == true"
+      "condition": "fcau.lab_test_required == 'yes'"
     },
     {
       "id": "e_lab_payment_gateway",

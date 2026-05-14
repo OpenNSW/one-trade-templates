@@ -1,35 +1,36 @@
 {
-    "id": "fcau-lab-test--officer-form",
-    "title": "Submit Test Outcome",
-    "schema": {
-        "type": "object",
-        "title": "SUBMIT TEST OUTCOME",
-        "properties": {
-            "lab_result": {
-                "type": "string",
-                "title": "Microbiology & Pesticide Clearance",
-                "enum": [
-                    "pass",
-                    "fail"
-                ]
-            }
-        },
-        "required": [
-            "lab_result"
+  "id": "fcau-lab-test--officer-form",
+  "title": "Submit Test Outcome",
+  "schema": {
+    "type": "object",
+    "title": "SUBMIT TEST OUTCOME",
+    "properties": {
+      "lab_result": {
+        "type": "string",
+        "title": "Microbiology & Pesticide Clearance",
+        "oneOf": [
+          {
+            "const": "pass",
+            "title": "Pass"
+          },
+          {
+            "const": "fail",
+            "title": "Fail"
+          }
         ]
+      }
     },
-    "form": [
-        {
-            "key": "lab_result",
-            "type": "radios",
-            "titleMap": {
-                "pass": "PASS (Clear of Pathogens)",
-                "fail": "FAIL (Contamination Detected)"
-            }
-        },
-        {
-            "type": "submit",
-            "title": "Submit"
-        }
+    "required": [
+      "lab_result"
     ]
+  },
+  "uischema": {
+    "type": "VerticalLayout",
+    "elements": [
+      {
+        "type": "Control",
+        "scope": "#/properties/lab_result"
+      }
+    ]
+  }
 }

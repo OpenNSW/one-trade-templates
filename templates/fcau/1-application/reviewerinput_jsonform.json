@@ -7,10 +7,19 @@
       "review_outcome": {
         "type": "string",
         "title": "Application Assessment Outcome",
-        "enum": [
-          "approve",
-          "reject",
-          "needs_more_info"
+        "oneOf": [
+          {
+            "const": "approve",
+            "title": "Approve"
+          },
+          {
+            "const": "reject",
+            "title": "Reject"
+          },
+          {
+            "const": "needs_more_info",
+            "title": "Needs More Information"
+          }
         ],
         "default": "approve",
         "example": "approve"

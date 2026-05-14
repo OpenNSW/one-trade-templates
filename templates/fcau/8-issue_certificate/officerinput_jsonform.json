@@ -14,6 +14,11 @@
         "title": "Digital Certificate Registry Link",
         "example": "https://foodsafety.nsw.gov.lk/certs/FCAU-ACME-9024.pdf"
       },
+      "certificate": {
+        "type": "string",
+        "title": "Digital Certificate File Upload (PDF)",
+        "format": "file"
+      },
       "authorized_signature": {
         "type": "string",
         "title": "Officer Cryptographic Signature Authority",
@@ -36,6 +41,10 @@
       {
         "type": "Control",
         "scope": "#/properties/certificate_url"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/certificate"
       },
       {
         "type": "Control",

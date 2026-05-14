@@ -12,18 +12,32 @@
       "manual_assessment_outcome": {
         "type": "string",
         "title": "Manual Physical Inspection Result",
-        "enum": [
-          "satisfactory",
-          "unsatisfactory"
+        "oneOf": [
+          {
+            "const": "satisfactory",
+            "title": "Satisfactory - No Visible Issues"
+          },
+          {
+            "const": "unsatisfactory",
+            "title": "Unsatisfactory - Visible Issues Detected"
+          }
         ],
-        "default": "satisfactory",
         "example": "satisfactory"
       },
       "lab_test_required": {
-        "type": "boolean",
+        "type": "string",
         "title": "Is detailed chemical/microbiological Lab Analysis required?",
-        "default": true,
-        "example": true
+        "oneOf": [
+          {
+            "const": "yes",
+            "title": "Yes"
+          },
+          {
+            "const": "no",
+            "title": "No"
+          }
+        ],
+        "example": "yes"
       },
       "assessment_outcome": {
         "type": "string",

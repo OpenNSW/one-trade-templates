@@ -5,10 +5,18 @@
     "type": "object",
     "properties": {
       "sample_required": {
-        "type": "boolean",
+        "type": "string",
         "title": "Is a physical consignment sample required for lab testing?",
-        "default": true,
-        "example": true
+        "oneOf": [
+          {
+            "const": "yes",
+            "title": "Yes"
+          },
+          {
+            "const": "no",
+            "title": "No"
+          }
+        ]
       },
       "reviewer_comments": {
         "type": "string",

@@ -18,9 +18,15 @@
       "receipt_outcome": {
         "type": "string",
         "title": "Sample Receipt Outcome",
-        "enum": [
-          "confirmed",
-          "rejected"
+        "oneOf": [
+          {
+            "const": "confirmed",
+            "title": "Confirmed"
+          },
+          {
+            "const": "rejected",
+            "title": "Rejected"
+          }
         ],
         "default": "confirmed"
       },
