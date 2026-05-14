@@ -1,0 +1,35 @@
+{
+    "id": "fcau-lab-test--officer-form",
+    "title": "Submit Test Outcome",
+    "schema": {
+        "type": "object",
+        "title": "SUBMIT TEST OUTCOME",
+        "properties": {
+            "lab_result": {
+                "type": "string",
+                "title": "Microbiology & Pesticide Clearance",
+                "enum": [
+                    "pass",
+                    "fail"
+                ]
+            }
+        },
+        "required": [
+            "lab_result"
+        ]
+    },
+    "form": [
+        {
+            "key": "lab_result",
+            "type": "radios",
+            "titleMap": {
+                "pass": "PASS (Clear of Pathogens)",
+                "fail": "FAIL (Contamination Detected)"
+            }
+        },
+        {
+            "type": "submit",
+            "title": "Submit"
+        }
+    ]
+}
