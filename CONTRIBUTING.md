@@ -37,15 +37,13 @@ You should now be able to run any of `npm run lint`, `npm run format`, `npm run 
 
 ## Pre-submission checklist
 
-Copy this into your PR description and tick each item:
+The [PR template](.github/pull_request_template.md) auto-populates this checklist. Run through each item locally before opening the PR:
 
 - [ ] `npm run format` produced no diff (or all formatting is committed)
 - [ ] `npm run validate` passes — all three rules in [`docs/lint-rules.md`](docs/lint-rules.md)
 - [ ] `npm run manifest` produced no diff (manifest is up to date)
-- [ ] Every new/changed file is a top-level JSON object (`{...}`)
 - [ ] Every new/changed `id` follows the naming guideline in [`docs/conventions.md`](docs/conventions.md)
 - [ ] Every `task_template_id` reference resolves to an existing `id` in `manifest.json#byId`
-- [ ] PR description names which workflow group(s) are touched
 
 The single command that runs all three automated checks together:
 
